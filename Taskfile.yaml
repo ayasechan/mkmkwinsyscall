@@ -12,5 +12,17 @@ tasks:
     silent: true
   clean:
     cmds:
-      - rm -rf .tmp.*
+      - rm -rf .tmp.* dist
 
+  pub:
+    deps: [clean]
+    cmds:
+      - |-
+        set -eu
+        mkdir -p dist
+        cp -r mkmkwinsyscall dist/app
+        pdm export > dist/requirements.txt
+        cd dist
+        pip install -r requirements.txt --target app
+        python -m zipapp -p "/usr/bin/env python" -o mkmkwinsyscall app
+        chmod +x mkmkwinsyscall
