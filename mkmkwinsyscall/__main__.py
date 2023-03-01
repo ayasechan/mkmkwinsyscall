@@ -12,7 +12,7 @@ import yaml
 
 def main():
     if len(sys.argv) < 2:
-        print('usage: main.py <config file path>')
+        print('usage: mkmkwinsyscall <config file path>')
         return
 
     with open(sys.argv[1]) as fd:
