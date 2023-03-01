@@ -1,0 +1,7 @@
+
+
+VirtualDesktopAccessor:
+  #  args rets fnalias
+  GetDesktopNumber: ['pDesktop IVirtualDesktop', 'r int']
+  MoveWindowToDesktopNumber: ['window hwnd, number int', 'r bool']
+  RestartVirtualDesktopAccessor: ['', '', 'foo']
