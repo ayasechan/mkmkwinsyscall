@@ -45,8 +45,7 @@ def gen_go_syscall(data):
     for dll, methods in data.items():
         for name, v in methods.items():
             if not v:
-                v = ['', '', '']
-
+                v = []
             while len(v) <= 3:
                 v.append('')
 
